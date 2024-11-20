@@ -1,0 +1,43 @@
+.header {
+  color: hsl(var(--color-font-header));
+  font-size: 1.875rem;
+  line-height: 171%;
+  text-transform: uppercase;
+  margin-block-end: 16px;
+}
+
+.button {
+  padding: 16px 32px;
+  text-transform: uppercase;
+  background-color: hsl(var(--color-bg-button));
+  border: 1px solid hsl(var(--color-border));
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: hsl(var(--color-bg-button-hover));
+    border: 1px solid hsl(var(--color-border-hover));
+  }
+}
+
+.box {
+  background-color: hsl(var(--color-bg-box));
+  border: 1px solid hsl(var(--color-border));
+}
+
+.input {
+  padding: 16px;
+  background-color: hsl(var(--color-bg));
+  border: 1px solid hsl(var(--color-border));
+  border-radius: 5px;
+  outline: 0;
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    border: 1px solid hsl(var(--color-border-hover));
+  }
+}

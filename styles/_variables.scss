@@ -3,12 +3,19 @@
   --font-brand: 'Poppins', sans-serif;
 
   // Colors
+  --color-brand: 249, 29%, 28%;
   // Font
   --color-font: 0, 0%, 11%;
   --color-font-inverse: 0, 0%, 98%;
+  --color-font-header: 248, 91%, 33%;
   // Background
   --color-bg: 0, 0%, 98%;
-  --color-bg-button: 0, 0%, 11%;
+  --color-bg-box: 240, 100%, 99%;
+  --color-bg-button: 238, 100%, 82%;
+  --color-bg-button-hover: 238, 100%, 90%;
+  // Border
+  --color-border: 238, 76%, 92%;
+  --color-border-hover: 238, 89%, 75%;
 }
 
 // Global breakpoints, free to use other if required
