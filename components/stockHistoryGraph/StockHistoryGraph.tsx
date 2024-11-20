@@ -1,9 +1,9 @@
-import type { StockData } from '@store/useStockStore'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import boost from 'highcharts/modules/boost'
 import HC_more from 'highcharts/highcharts-more'
 import accessibility from 'highcharts/modules/accessibility'
+import type { StockData } from '@store/useStockStore'
 
 if (typeof Highcharts === 'object') {
   boost(Highcharts)

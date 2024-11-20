@@ -1,7 +1,7 @@
-import styles from './HistoryCard.module.scss'
 import { useStockStore } from '@store/useStockStore'
 import Spinner from '@components/spinner/Spinner'
 import { StockHistoryGraph } from '@components/stockHistoryGraph/StockHistoryGraph'
+import styles from './HistoryCard.module.scss'
 
 const HistoryCard = () => {
   const { ticker, stockData, loading, error } = useStockStore()

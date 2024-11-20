@@ -1,9 +1,8 @@
-import styles from './Search.module.scss'
+import { type FormEvent, useEffect } from 'react'
 import clsx from 'clsx'
-import { useStockStore } from '@store/useStockStore'
-import type { FormEvent } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useStockStore } from '@store/useStockStore'
+import styles from './Search.module.scss'
 
 const Search = () => {
   const router = useRouter()
