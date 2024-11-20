@@ -13,6 +13,7 @@ type StockStore = {
   setTicker: (ticker: string) => void
   fetchStockData: (ticker: string) => Promise<void>
   clearError: () => void
+  initializeFromUrl: (ticker: string) => void
 }
 
 export const useStockStore = create<StockStore>((set) => ({
@@ -23,6 +24,11 @@ export const useStockStore = create<StockStore>((set) => ({
   setTicker: (ticker) =>
     set({ ticker: ticker.toUpperCase(), error: null, stockData: [] }),
   clearError: () => set({ error: null }),
+  initializeFromUrl: (ticker) => {
+    if (ticker) {
+      set({ ticker: ticker.toUpperCase() })
+    }
+  },
   fetchStockData: async (ticker: string) => {
     set({ loading: true, error: null })
 

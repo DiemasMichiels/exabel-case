@@ -2,16 +2,38 @@ import styles from './Search.module.scss'
 import clsx from 'clsx'
 import { useStockStore } from '@store/useStockStore'
 import type { FormEvent } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useEffect } from 'react'
 
 const Search = () => {
-  const { ticker, loading, setTicker, fetchStockData, clearError } =
-    useStockStore()
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const {
+    ticker,
+    loading,
+    setTicker,
+    fetchStockData,
+    clearError,
+    initializeFromUrl,
+  } = useStockStore()
+
+  useEffect(() => {
+    const tickerFromUrl = searchParams.get('ticker')
+    if (tickerFromUrl) {
+      initializeFromUrl(tickerFromUrl)
+      fetchStockData(tickerFromUrl)
+    }
+  }, [searchParams, initializeFromUrl, fetchStockData])
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
 
     if (ticker) {
       clearError()
+
+      const params = new URLSearchParams()
+      params.set('ticker', ticker)
+      router.push(`?${params.toString()}`)
       fetchStockData(ticker)
     }
   }
