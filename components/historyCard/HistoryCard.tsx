@@ -1,7 +1,7 @@
 import styles from './HistoryCard.module.scss'
-import clsx from 'clsx'
 import { useStockStore } from '@store/useStockStore'
 import Spinner from '@components/spinner/Spinner'
+import { StockHistoryGraph } from '@components/stockHistoryGraph/StockHistoryGraph'
 
 const HistoryCard = () => {
   const { ticker, stockData, loading, error } = useStockStore()
@@ -19,6 +19,9 @@ const HistoryCard = () => {
         </div>
       )}
       {!loading && error && <p className={styles.error}>{error}</p>}
+      {!loading && !error && stockData.length && (
+        <StockHistoryGraph data={stockData} />
+      )}
     </div>
   )
 }

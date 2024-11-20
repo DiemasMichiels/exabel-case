@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-type StockData = {
+export type StockData = {
   date: string
   close: number
 }
@@ -20,7 +20,8 @@ export const useStockStore = create<StockStore>((set) => ({
   stockData: [],
   error: null,
   loading: false,
-  setTicker: (ticker) => set({ ticker: ticker.toUpperCase() }),
+  setTicker: (ticker) =>
+    set({ ticker: ticker.toUpperCase(), error: null, stockData: [] }),
   clearError: () => set({ error: null }),
   fetchStockData: async (ticker: string) => {
     set({ loading: true, error: null })
