@@ -33,14 +33,7 @@ export const useStockStore = create<StockStore>((set) => ({
     set({ loading: true, error: null })
 
     try {
-      const endDate = new Date().toISOString().split('T')[0]
-      const startDate = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
-        .toISOString()
-        .split('T')[0]
-
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/eod/${ticker}.US?from=${startDate}&to=${endDate}&api_token=${process.env.NEXT_PUBLIC_API_KEY}&fmt=json`,
-      )
+      const response = await fetch(`/api/stock/${ticker}`)
 
       if (!response.ok) {
         throw new Error()
