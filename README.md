@@ -19,9 +19,10 @@ Main dependencies used:
 
 Add following ENV variables to a file in the root names: `env.local`
 
-| Name | Description |
-| ---- | ----------- |
-|      |             |
+| Name     | Description                          |
+| -------- | ------------------------------------ |
+| API_KEY  | API key of <https://eodhd.com/>      |
+| BASE_URL | API base url of <https://eodhd.com/> |
 
 ### Running
 

@@ -1,22 +1,14 @@
-.form {
-  max-width: 600px;
-  width: 100%;
-  margin-block: 32px;
-  margin-inline: auto;
-  padding: 32px;
-  border-radius: 20px;
+.inputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 
-  h1 {
-    text-align: center;
-  }
+  .searchInput {
+    flex: 1;
+    text-transform: uppercase;
 
-  .inputContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-
-    .searchInput {
-      flex: 1;
+    &::placeholder {
+      text-transform: none;
     }
   }
 }

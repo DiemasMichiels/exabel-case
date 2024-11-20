@@ -13,20 +13,26 @@
   border: 1px solid hsl(var(--color-border));
   border-radius: 5px;
   outline: 0;
-  cursor: pointer;
   transition: all 0.3s ease-in-out;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover:not([disabled]),
+  &:active:not([disabled]),
+  &:focus:not([disabled]) {
+    cursor: pointer;
     background-color: hsl(var(--color-bg-button-hover));
     border: 1px solid hsl(var(--color-border-hover));
   }
 }
 
 .box {
+  width: 100%;
+  max-width: 600px;
+  margin-block-start: 32px;
+  margin-inline: auto;
+  padding: 32px;
   background-color: hsl(var(--color-bg-box));
   border: 1px solid hsl(var(--color-border));
+  border-radius: 20px;
 }
 
 .input {

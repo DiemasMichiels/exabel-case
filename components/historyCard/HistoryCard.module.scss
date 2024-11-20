@@ -1,0 +1,9 @@
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: hsl(var(--color-font-error));
+  text-align: center;
+}
